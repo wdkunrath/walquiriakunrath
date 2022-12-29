@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "5328ff01-f441-478d-bbe1-d3eaef40a1d9"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -57,7 +60,26 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
+            "mock": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ],
+              "outputHashing": "all",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -74,11 +96,11 @@
             "production": {
               "browserTarget": "walquiriaKunrath:build:production"
             },
-            "development": {
-              "browserTarget": "walquiriaKunrath:build:development"
+            "mock": {
+              "browserTarget": "walquiriaKunrath:build:mock"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "mock"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

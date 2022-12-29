@@ -1,13 +1,29 @@
 {
   "name": "walquiria-kunrath",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Projeto criado para desenvolver as minhas habilidades com o angular",
+  "author": {
+    "name": "Walquiria D Kunrath",
+    "email": "walquiriakunrath@walquiriakunrath.com",
+    "url": "https://www.walquiriakunrath.com"
+  },
+  "homepage": "https://www.walquiriakunrath.com/home",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start-mock": "ng serve --configuration=mock",
+    "build": "ng build --configuration=mock",
+    "watch": "ng build --watch --configuration mock",
+    "test": "ng test",
+    "lint": "eslint --fix src/**/*.{ts,js}",
+    "formatter": "prettier --write --loglevel error src/**/*.{html,ts,js,scss,css}",
+    "e2e": "ng e2e"
   },
+  "keywords": [
+    "cadastro formacao",
+    "cadastro experiencias",
+    "extras curriculares"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
@@ -28,12 +44,22 @@
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-plugin-prettier": "~4.2.1",
+    "tslint": "~5.18.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "@angular-eslint/eslint-plugin": "1.2.0",
+    "@angular-eslint/eslint-plugin-template": "1.2.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "prettier": "~2.7.1",
     "typescript": "~4.3.5"
   }
 }
